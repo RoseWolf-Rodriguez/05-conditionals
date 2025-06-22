@@ -14,13 +14,18 @@ form.addEventListener('submit', function(event) {
   // Create a variable for the message
   let message = '';
 
-  // Check the weather and set the message
-  if (weather === 'sunny') {
+  // Check if weather is cloudy or rainy
+  if (weather === 'cloudy' || weather === 'rainy') {
+    // Use the right emoji for each weather
+    let emoji = '';
+    if (weather === 'cloudy') {
+      emoji = '☁️';
+    } else if (weather === 'rainy') {
+      emoji = '🌧️';
+    }
+    message = `It's ${weather}! ${emoji} A light jacket might be a good idea.`;
+  } else if (weather === 'sunny') {
     message = `It's sunny! 😎 Don't forget your sunglasses and sunscreen.`;
-  } else if (weather === 'cloudy') {
-    message = `It's cloudy ☁️. You might want a light jacket just in case.`;
-  } else if (weather === 'rainy') {
-    message = `It's rainy! 🌧️ Bring an umbrella and wear waterproof shoes.`;
   } else if (weather === 'snowy') {
     message = `It's snowy! ❄️ Wear a warm coat, gloves, and boots.`;
   } else if (weather === 'windy') {
