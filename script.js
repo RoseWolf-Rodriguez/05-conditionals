@@ -37,8 +37,12 @@ form.addEventListener('submit', function(event) {
   // You can also give extra advice based on temperature
   if (temperature !== '') {
     const temp = Number(temperature);
+    // Suggest dressing warmly if it's pretty cold
     if (temp < 40) {
       message += ` It's pretty cold! 🧣 Dress warmly.`;
+    } else if (temp < 50) {
+      // Suggest a warm jacket if below 50°F
+      message += ` It's a bit chilly. 🧥 Wear a warm jacket.`;
     } else if (temp > 85) {
       message += ` It's hot outside! 🥤 Stay hydrated.`;
     }
